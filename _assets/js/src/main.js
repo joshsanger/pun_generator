@@ -14,6 +14,7 @@
  * 01. GLOBAL VARIABLES
  * Variables used throughout the application
  */
+var currentPun;
 var puns = [
     {
         pun  : 'I can\'t believe I got fired from the calendar factory. All I did was take a day off!',
@@ -32,11 +33,11 @@ var puns = [
         topic: 'Life'
     },
     {
-        pun  : 'Although I love puns, i really hate insect puns. I don\'t what it is, but they just bug me',
+        pun  : 'Although I love puns, i really hate insect puns. I don\'t what it is, but they just bug me.',
         topic: 'Deep thoughts'
     },
     {
-        pun  : 'I wanna make a joke about sodium, but Na ...',
+        pun  : 'I wanna make a joke about sodium, but Na...',
         topic: 'Science'
     },
     {
@@ -68,8 +69,15 @@ var puns = [
  */
 function fetchRandomPun() {
 
+    var pun;
     var randNum = Math.floor((Math.random() * puns.length));
-    var pun = puns[randNum];
+
+    while (randNum == currentPun) {
+        randNum = Math.floor((Math.random() * puns.length));
+    }
+
+    currentPun = randNum;
+    pun = puns[randNum];
 
     $('.pun--pun').text(pun.pun);
     $('.pun--topic').text(pun.topic);
