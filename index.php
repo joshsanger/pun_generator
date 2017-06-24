@@ -27,11 +27,11 @@
         <div class="pun-wrap">
             <div class="pun-content">
                 <div class="topic">
-                    <p>Topic: <span class="pun--topic">Work</span></p>
+                    <p>Topic: <span class="pun--topic">TBD</span></p>
                 </div> <!-- /topic -->
                 <div class="pun">
                     <i class="material-icons">&#xE815;</i>
-                    <p class="pun--pun">I can't believe I got fired from the calendar factory. All I did was take a day off!</p>
+                    <p class="pun--pun">Fetching a pun ... hang on!</p>
                 </div>
 
             </div> <!-- /content -->
