@@ -14,10 +14,10 @@
                     <h1>Pun Generator</h1>
                 </div>
             </div>
-            <div class="button generate">
+            <span class="button generate">
                 <i class="material-icons">&#xE5D5;</i>
-                <span>Generate another!</span>
-            </div> <!-- /generate -->
+                <span>Generate a pun!</span>
+            </span> <!-- /generate -->
         </div> <!-- /flex-wrapper -->
 
     </div> <!-- /container -->

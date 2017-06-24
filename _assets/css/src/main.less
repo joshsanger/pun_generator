@@ -12,6 +12,7 @@
         .flex-container();
         .align-items(center);
         & a {
+            .flex(0 0 auto);
             margin-right: 20px;
             width: 54px;
             height: 54px;
@@ -48,6 +49,7 @@
     overflow: hidden;
     border: none;
     text-decoration: none;
+    display: inline-block;
     border-radius: 5px;
     .trans(background, 0.3s);
     & i {
@@ -68,6 +70,7 @@
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+
     & .fetching {
 
     }
@@ -80,6 +83,7 @@
             font-weight: 700;
         }
         & .pun {
+            line-height: 1.5em;
             margin-top: 5px;
             .flex-container();
             .align-items(center);
@@ -104,6 +108,21 @@
                     right: 100%;
                     top: 50%;
                     margin-top: -10px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 520px) {
+    .top-banner {
+        & .container {
+            & > .flex-wrapper {
+                display: block;
+                & .button {
+                    width: 180px;
+                    display: block;
+                    text-align: center;
+                    margin: 20px auto 0 auto;
                 }
             }
         }
