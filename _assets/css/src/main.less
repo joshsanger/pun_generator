@@ -1,0 +1,110 @@
+.white-background {
+    background: @white;
+}
+.content {
+    padding: 50px 0;
+}
+.top-banner {
+    background: @black;
+    padding: 20px 0;
+    color: @white;
+    & .text {
+        .flex-container();
+        .align-items(center);
+        & a {
+            margin-right: 20px;
+            width: 54px;
+            height: 54px;
+            .flex-container();
+            .align-items(center);
+            .justify-content(center);
+            background: @white;
+            border-radius: 50%;
+            & img {
+                width: auto;
+                height: 17px;
+            }
+        }
+        & > div {
+            & span {
+                font-size: 12px;
+                letter-spacing: 0.1em;
+                color: @green;
+            }
+            & h1 {
+                font-size: 16px;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+}
+.button {
+    background: @blue;
+    color: @white;
+    font-size: 14px;
+    padding: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    .trans(background, 0.3s);
+    & i {
+        margin-right: 10px;
+        font-size: 18px;
+        vertical-align: text-bottom;
+        position: relative;
+        .trans(all, 0.3s);
+    }
+    &:hover {
+        background: darken(@blue, 7%);
+        & i {
+            .transform(~"rotate(180deg)");
+        }
+    }
+}
+.pun-wrap {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    & .fetching {
+        
+    }
+    & .pun-content {
+        & .topic {
+            padding-left: 43px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+        & .pun {
+            margin-top: 5px;
+            .flex-container();
+            .align-items(center);
+            & i {
+                font-size: 28px;
+                color: @green;
+                margin-right: 15px;
+            }
+            & p {
+                position: relative;
+                background: @lightGrey;
+                color: @black;
+                padding: 15px;
+                border-radius: 5px;
+                &::after {
+                    content: '';
+                    border-top: solid 10px transparent;
+                    border-left: solid 10px transparent;
+                    border-right: solid 10px @lightGrey;
+                    position: absolute;
+                    right: 100%;
+                    top: 50%;
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
+}
