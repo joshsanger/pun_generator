@@ -43,7 +43,10 @@
 </section>
 <section class="content">
     <div class="container">
-        <p>Much to my wife's dismay, I absolutely love puns! So much so, that I've created this little generator for you. Enjoy!</p>
+        <p class="center-text secondary-text">
+            Much to my wife's dismay, I absolutely love puns! So much so, that I've created this little generator for you.<br/>
+            Hope you enjoy!
+        </p>
     </div> <!-- /container -->
 </section>
 
