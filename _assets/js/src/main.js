@@ -60,6 +60,10 @@ var puns = [
         pun  : 'I would tell a history pun, but they\'re too old fashioned.',
         topic: 'School'
     },
+    {
+        pun  : 'The invention of the shovel must have been ground breaking!',
+        topic: 'Tools'
+    },
 ];
 
 
