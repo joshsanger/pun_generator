@@ -255,15 +255,15 @@ class Footer extends React.Component {
      */
     render() {
         return (
-            <section className="content">
+            <footer className="content">
                 <div className="container">
                     <p className="center-text secondary-text">
                         Much to my wife's dismay, I absolutely love puns! So much so, that I've created this little
                         generator for you.<br/>
-                        Hope you enjoy!
+                        Made with <i className="material-icons red">favorite</i> on <a href="https://github.com/joshsanger/pun_generator" target="_blank">Github</a> by Joshua Sanger
                     </p>
                 </div>
-            </section>
+            </footer>
         );
     }
 }
