@@ -1,7 +1,6 @@
 /.idea/
-/_includes/config.php
 /_assets/css/staging.less
 /_assets/css/master.min.css
-/_assets/js/main.min.js
 /node_modules/
 /_assets/js/app.js
+/package-lock.json
