@@ -1,5 +1,4 @@
-<?php require_once('./_includes/config.php');?>
-<?php require_once('./_includes/header.php');?>
+
 
 
 <section class="top-banner">
@@ -49,5 +48,3 @@
         </p>
     </div> <!-- /container -->
 </section>
-
-<?php require_once('./_includes/footer.php');?>
