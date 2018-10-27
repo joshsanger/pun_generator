@@ -1,9 +1,46 @@
+/**
+ * T A B L E   O F   C O N T E N T S
+ *
+ * @author      Geek Power Web Design
+ * @version     1.0
+ *
+ * TODO: Move components into separate files (Babel + Webpack)
+ * TODO: Add section for user input (topic & pun)
+ *
+ * 01.    PUN GENERATOR APP
+ * 01.01. CONSTRUCTOR
+ * 01.02. SET RANDOM PUN
+ * 01.03. RENDER APP
+ * 02.    HEADER COMPONENT
+ * 02.01. RENDER HEADER
+ * 03.    BODY COMPONENT
+ * 03.01. CONSTRUCTOR
+ * 03.02. RENDER BODY
+ * 04.    PUN COMPONENT
+ * 04.01. CONSTRUCTOR
+ * 04.02. RENDER PUN
+ * 04.    FOOTER COMPONENT
+ * 05.01. RENDER FOOTER
+ * 06.    RENDER APP TO PAGE
+ */
+
+
+/**
+ * 01. PUN GENERATOR APP
+ * The main component for rendering the application
+ */
 class PunGeneratorApp extends React.Component {
 
-    constructor() {
-        super();
 
-        const puns = [
+    /**
+     * 01.01. CONSTRUCTOR
+     * Sets up the class
+     */
+    constructor() {
+
+        super();
+        this.set_randomPun  = this.set_randomPun.bind(this);
+        const puns          = [
             {
                 pun  : 'I can\'t believe I got fired from the calendar factory. All I did was take a day off!',
                 topic: 'Work'
@@ -57,10 +94,13 @@ class PunGeneratorApp extends React.Component {
             puns,
             currentPunIndex: Math.floor((Math.random() * puns.length))
         }
-        this.set_randomPun  = this.set_randomPun.bind(this);
     }
 
 
+    /**
+     * 01.02. SET RANDOM PUN
+     * Changes the state to set a random pun
+     */
     set_randomPun() {
 
         let pun;
@@ -74,6 +114,12 @@ class PunGeneratorApp extends React.Component {
     }
 
 
+    /**
+     * 01.03. RENDER APP
+     * Renders the component
+     *
+     * @returns     JSX
+     */
     render() {
 
         return (
@@ -86,12 +132,97 @@ class PunGeneratorApp extends React.Component {
     }
 }
 
-class Pun extends React.Component {
 
+/**
+ * 02. HEADER COMPONENT
+ * The header / top banner of the application
+ */
+class Header extends React.Component {
+
+    /**
+     * 02.01. RENDER HEADER
+     * Renders the header component
+     */
+    render() {
+        return (
+            <header className="top-banner">
+                <div className="container">
+                    <div className="flex-wrapper center between">
+                        <div className="text">
+                            <a href="http://joshuasanger.ca/" target="_blank">
+                                <img src="<?php echo BASE_URL;?>/_assets/images/logo.svg" alt=""/>
+                            </a>
+                            <div>
+                                <span>Your very own</span>
+                                <h1>Pun Generator</h1>
+                            </div>
+                        </div>
+                        <span className="button generate" onClick={this.props.set_randomPun}>
+                            <i className="material-icons">&#xE5D5;</i>
+                            <span>Generate a pun!</span>
+                        </span>
+                    </div>
+                </div>
+            </header>
+        )
+    }
+}
+
+
+/**
+ * 03. BODY COMPONENT
+ * Section that contains the main content and pun wrapper
+ */
+class Body extends React.Component {
+
+    /**
+     * 03.01. CONSTRUCTOR
+     * Sets up the body component
+     */
     constructor(props) {
         super(props);
     }
 
+
+    /**
+     * 03.02. RENDER BODY
+     * Renders the body component
+     */
+    render() {
+        return (
+            <section className="content white-background">
+                <div className="container">
+                    <div className="pun-wrap">
+                        <Pun puns={this.props.puns} punIndex={this.props.punIndex}/>
+                        <div className="fetching">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+}
+
+
+/**
+ * 04. PUN COMPONENT
+ * The pun component. This will re-render when the current pun changes
+ */
+class Pun extends React.Component {
+
+    /**
+     * 04.01. CONSTRUCTOR
+     * Sets up the pun component
+     */
+    constructor(props) {
+        super(props);
+    }
+
+
+    /**
+     * 04.02. RENDER PUN
+     * Renders the pun component
+     */
     render() {
 
         const pun = this.props.puns[this.props.punIndex];
@@ -111,33 +242,17 @@ class Pun extends React.Component {
     }
 }
 
-class Header extends React.Component {
-    render() {
-        return (
-            <section className="top-banner">
-                <div className="container">
-                    <div className="flex-wrapper center between">
-                        <div className="text">
-                            <a href="http://joshuasanger.ca/" target="_blank">
-                                <img src="<?php echo BASE_URL;?>/_assets/images/logo.svg" alt=""/>
-                            </a>
-                            <div>
-                                <span>Your very own</span>
-                                <h1>Pun Generator</h1>
-                            </div>
-                        </div>
-                        <span className="button generate" onClick={this.props.set_randomPun}>
-                                <i className="material-icons">&#xE5D5;</i>
-                                <span>Generate a pun!</span>
-                            </span>
-                    </div>
-                </div>
-            </section>
-        )
-    }
-}
 
+/**
+ * 05. FOOTER COMPONENT
+ * Section that contains the footer content
+ */
 class Footer extends React.Component {
+
+    /**
+     * 05.01. RENDER FOOTER
+     * Renders the footer component
+     */
     render() {
         return (
             <section className="content">
@@ -153,23 +268,9 @@ class Footer extends React.Component {
     }
 }
 
-class Body extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <section className="content white-background">
-                <div className="container">
-                    <div className="pun-wrap">
-                        <Pun puns={this.props.puns} punIndex={this.props.punIndex}/>
-                        <div className="fetching">
-                        </div>
-                    </div>
-                </div>
-            </section>
-        );
-    }
-}
 
+/**
+ * 06. RENDER APP TO PAGE
+ * Renders the main component to the browser
+ */
 ReactDOM.render(<PunGeneratorApp />, document.getElementById('app'));
