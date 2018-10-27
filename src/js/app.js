@@ -150,7 +150,7 @@ class Header extends React.Component {
                     <div className="flex-wrapper center between">
                         <div className="text">
                             <a href="http://joshuasanger.ca/" target="_blank">
-                                <img src="<?php echo BASE_URL;?>/_assets/images/logo.svg" alt=""/>
+                                <img src="./_assets/images/logo.svg" alt=""/>
                             </a>
                             <div>
                                 <span>Your very own</span>
