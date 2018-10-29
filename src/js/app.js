@@ -1,7 +1,7 @@
 /**
  * T A B L E   O F   C O N T E N T S
  *
- * @author      Geek Power Web Design
+ * @author      Joshua Sanger
  * @version     1.0
  *
  * TODO: Move components into separate files (Babel + Webpack)
